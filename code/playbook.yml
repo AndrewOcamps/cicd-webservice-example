@@ -1,0 +1,36 @@
+- name: Configuración de un servidor web
+  hosts: all
+  tasks:
+    - name: Instalación de dependencías
+      yum:
+        name: ['httpd', 'firewalld']
+        state: latest
+
+    - name: copiar index.html
+      copy:
+        src: index.html
+        dest: /var/www/html/
+        mode: 0755
+
+    - name: Iniciar servicio de firewalld
+      service:
+        name: firewalld
+        state: started
+        enabled: yes
+      when:
+        - inventory_hostname in groups['qa'] or inventory_hostname in groups['prod']
+
+    - name: Configurar servicio http en el firewall
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+        immediate: yes
+      when:
+        - inventory_hostname in groups['qa'] or inventory_hostname in groups['prod']
+
+    - name: Iniciar servicio de apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes
