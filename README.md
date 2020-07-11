@@ -1,5 +1,5 @@
 # cicd-webservice-example
-This project is used to complement the tutorial published on the following page:
+This project is used to complement the tutorial published on the following page: https://medium.com/@blog.ocampoge/ci-cd-automatiza-tus-despliegues-con-gitlab-y-ansible-79876bec9c18
 
 Vagrant configuration file to install the CI CD Gitlab lab environment
 
@@ -52,4 +52,4 @@ pass: vagrant
 In the browser access http://192.168.33.20/
 Set GitLab admin password
 
-Continue at the following link:
+Continue at the following link: https://medium.com/@blog.ocampoge/ci-cd-automatiza-tus-despliegues-con-gitlab-y-ansible-79876bec9c18
