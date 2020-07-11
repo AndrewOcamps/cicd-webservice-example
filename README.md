@@ -12,7 +12,7 @@ Inside the infrastructure directory is the Vagrantfile file, used to deploy serv
 
 ### Step 1:
 ```
-infrastructure cd
+cd infrastructure
 vagrant up
 ```
 
